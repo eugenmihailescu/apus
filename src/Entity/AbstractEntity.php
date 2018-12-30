@@ -1,12 +1,12 @@
 <?php
 namespace Apus\Entity;
 
-use Doctrine\ORM\Mapping\MappedSuperclass;
-use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\GeneratedValue;
-use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Index;
+use Doctrine\ORM\Mapping\MappedSuperclass;
+use Doctrine\ORM\Mapping\Table;
 
 /**
  *
@@ -100,4 +100,3 @@ abstract class AbstractEntity
         return $this;
     }
 }
-

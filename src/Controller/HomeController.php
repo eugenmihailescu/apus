@@ -2,8 +2,8 @@
 namespace Apus\Controller;
 
 use Apus\Entity\Post;
-use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
@@ -19,7 +19,7 @@ class HomeController extends AbstractController
         $criteria = [];
 
         $orderBy = [
-            'publishedAt' => 'DESC'
+            'publishedAt' => 'DESC',
         ];
 
         $offset = $request->get('offset', 0);
@@ -32,7 +32,7 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 }

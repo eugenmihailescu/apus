@@ -1,5 +1,5 @@
 Apus\Entity\Tag:
   tag_{1..500}:
     slug: '<randomElement( ["php","linux","math","hacking","javascript","wordpress","gentoo","windwos","angularjs","scss","mysql","kernel","boot"] )>'
-    name: '@self->slug'
-    post: '@post*'
+    name: "@self->slug"
+    post: "@post*"

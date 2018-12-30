@@ -2,8 +2,8 @@
 namespace Apus\Controller;
 
 use Apus\Entity\Post;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class CommentController extends AbstractController
 {
@@ -15,7 +15,7 @@ class CommentController extends AbstractController
     public function index()
     {
         return $this->render('comment/index.html.twig', [
-            'controller_name' => 'CommentController'
+            'controller_name' => 'CommentController',
         ]);
     }
 
@@ -23,15 +23,14 @@ class CommentController extends AbstractController
      *
      * @Route("/comment/{postSlug}/new", name="comment_new")
      */
-    public function new(Request $request, $postSlug)
-    {
+    function new (Request $request, $postSlug) {
         $post = $this->getDoctrine()
             ->getRepository(Post::class)
             ->findOneBy([
-            'slug' => $postSlug
-        ]);
+                'slug' => $postSlug,
+            ]);
 
-        if (! $post) {
+        if (!$post) {
             throw $this->createNotFoundException();
         }
     }

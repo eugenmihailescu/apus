@@ -2,7 +2,7 @@
 #    path: /
 #    controller: Apus\Controller\DefaultController::index
 fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 controllers:
-    resource: '../src/Controller/'
-    type:     annotation
+  resource: "../src/Controller/"
+  type: annotation

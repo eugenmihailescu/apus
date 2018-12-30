@@ -3,9 +3,9 @@ namespace Apus\Controller;
 
 use Apus\Entity\Post;
 use Apus\Forms\PostType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class PostController extends AbstractController
 {
@@ -17,7 +17,7 @@ class PostController extends AbstractController
     public function index()
     {
         return $this->render('post/index.html.twig', [
-            'controller_name' => 'PostController'
+            'controller_name' => 'PostController',
         ]);
     }
 
@@ -29,8 +29,7 @@ class PostController extends AbstractController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function new(Request $request)
-    {
+    function new (Request $request) {
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
 
@@ -42,7 +41,7 @@ class PostController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_post_show', [
-                'id' => $post->getId()
+                'id' => $post->getId(),
             ]);
         }
     }
@@ -71,7 +70,7 @@ class PostController extends AbstractController
 
         return $this->render('admin/post/show.html.twig', [
             'post' => $post,
-            'delete_form' => $deleteForm->createView()
+            'delete_form' => $deleteForm->createView(),
         ]);
     }
 }

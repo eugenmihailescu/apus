@@ -5,18 +5,18 @@ Apus\Entity\User:
     enabled: true
     password: <password()>
     roles:
-    - ROLE_USER
+      - ROLE_USER
   user2:
     username: admin
     email: admin@domain.org
     enabled: true
     password: <password()>
     roles:
-    - ROLE_ADMIN
+      - ROLE_ADMIN
   user3:
     username: super_admin
     email: super_admin@domain.org
     enabled: true
     password: <password()>
     roles:
-    - ROLE_SUPER_ADMIN
+      - ROLE_SUPER_ADMIN

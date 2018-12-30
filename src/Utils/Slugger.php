@@ -20,4 +20,3 @@ class Slugger
         return $slugify->slugify($value);
     }
 }
-

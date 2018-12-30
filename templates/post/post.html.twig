@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{%- block title -%}{{ post.title }}{%- endblock -%}
+{%- block title -%}{{ post.title }}
+{%- endblock -%}
 
-{%- block body_id 'post' -%}
+{%- block body_id 'post' -%}{% endblock body_id %}
 
 {% block body %}
 
-{% include 'post.html.twig' with {post:post} %}
+    {% include 'post.html.twig' with {
+        post : post
+    } %}
 
-{% endblock %}
+{% endblock body %}

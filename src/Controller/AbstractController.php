@@ -1,16 +1,16 @@
 <?php
 namespace Apus\Controller;
 
+use Apus\Utils\HtmlBeautifier;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as BaseController;
-use Apus\Utils\HtmlBeautifier;
 
 /**
  * The common controller functions
  *
  * @author Eugen Mihailescu
- *        
+ *
  */
 abstract class AbstractController extends BaseController
 {
@@ -41,6 +41,11 @@ abstract class AbstractController extends BaseController
         return $response;
     }
 
+    /**
+     * The constructor
+     *
+     * @param KernelInterface $kernel
+     */
     public function __construct(KernelInterface $kernel)
     {
         $this->kernel = $kernel;
@@ -66,4 +71,3 @@ abstract class AbstractController extends BaseController
         return $this->kernel->isDebug();
     }
 }
-

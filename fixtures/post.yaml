@@ -3,6 +3,6 @@ Apus\Entity\Post:
     title: <sentence()>
     slug: <slug()>
     content: <text()>
-    user: '@user*'
+    user: "@user*"
     publishedAt: <date_create()>
     thumbnail: <imageUrl(256,145,"technics")>

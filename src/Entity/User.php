@@ -1,12 +1,12 @@
 <?php
 namespace Apus\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
-use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\Mapping\Table;
-use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\Table;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  *
@@ -25,4 +25,3 @@ class User extends BaseUser
      */
     public $id;
 }
-

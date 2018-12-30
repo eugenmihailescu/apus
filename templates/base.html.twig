@@ -4,31 +4,33 @@
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-        <meta name="generator" content="MyBlogg v1.0" />
+        <meta name="generator" content="MyBlogg v1.0"/>
 
         {% include '_defaults/_seo-site.html.twig' %}
-        		        
-        <title>{%- block title -%}{%- endblock -%}</title>
-        
+
+        <title>
+            {%- block title -%}{%- endblock -%}
+        </title>
+
         {{ encore_entry_link_tags('app') }}
 
         {% block stylesheets %}{% endblock %}
 
     </head>
-    
+
     <body id="{%- block body_id -%}{%- endblock -%}" class="m-0">
-    
+
         {% include '_defaults/header.html.twig' %}
-        
+
         <div class="wrapper">
             {% include '_defaults/sidebar.html.twig' %}
-            
-            <!-- Page Content  -->
+
+            <!-- Page Content -->
             <div id="content" class="container-fluid p-3">
                 {% block body %}{% endblock %}
             </div>
         </div>
-        
+
         {% include '_defaults/footer.html.twig' %}
 
         {{ encore_entry_script_tags('app') }}

@@ -1,24 +1,24 @@
-footer{
-	background-color: $sidebar-background;
-	color: $sidebar-color;	
+footer {
+  background-color: $sidebar-background;
+  color: $sidebar-color;
 }
 
 footer p {
-	font-size: 13px;
-	margin-bottom: .25em
+  font-size: 13px;
+  margin-bottom: 0.25em;
 }
 
-footer a{
-	color: $orange;
-	text-decoration: none;
+footer a {
+  color: $orange;
+  text-decoration: none;
 }
 
-footer a:hover{
-	color: $teal;
-	text-decoration: none;
+footer a:hover {
+  color: $teal;
+  text-decoration: none;
 }
 
 footer #footer-resources i {
-	font-size: 28.5px;
-	margin-left: .5em
+  font-size: 28.5px;
+  margin-left: 0.5em;
 }

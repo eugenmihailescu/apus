@@ -1,7 +1,7 @@
 {% macro render_thumbnail(post, class) %}
-{% if post.thumbnail is not empty %}
-	<a href="#">
-	<img class="{{class}} rounded img-thumbnail mx-auto" src="{{post.thumbnail}}" alt="{{post.thumbnail}}" title="{{post.title}}">
-	</a>
-{% endif %}
+    {% if post.thumbnail is not empty %}
+        <a href="#">
+            <img class="{{class}} rounded img-thumbnail mx-auto" src="{{post.thumbnail}}" alt="{{post.thumbnail}}" title="{{post.title}}">
+        </a>
+    {% endif %}
 {% endmacro render_thumbnail %}

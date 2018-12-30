@@ -2,10 +2,10 @@
 namespace Apus\Repository;
 
 use Apus\Entity\Post;
+use Apus\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query\Expr\Join;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use Apus\Entity\Tag;
 
 /**
  *

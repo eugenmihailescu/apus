@@ -1,9 +1,9 @@
 <?php
 namespace Apus\Twig;
 
+use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use Twig\Extension\AbstractExtension;
 
 class AppExtension extends AbstractExtension
 {
@@ -16,8 +16,8 @@ class AppExtension extends AbstractExtension
             // Reference: https://twig.symfony.com/doc/2.x/advanced.html#automatic-escaping
             new TwigFilter('filter_name', [
                 $this,
-                'doSomething'
-            ])
+                'doSomething',
+            ]),
         ];
     }
 
@@ -26,8 +26,8 @@ class AppExtension extends AbstractExtension
         return [
             new TwigFunction('function_name', [
                 $this,
-                'someFunction'
-            ])
+                'someFunction',
+            ]),
         ];
     }
 }

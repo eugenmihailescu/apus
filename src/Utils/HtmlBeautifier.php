@@ -5,7 +5,7 @@ namespace Apus\Utils;
  * Beautifies a HTML document
  *
  * @author Eugen Mihailescu
- *        
+ *
  */
 class HtmlBeautifier
 {
@@ -191,7 +191,7 @@ class HtmlBeautifier
 
         $value = str_replace('"', '\'', $value);
 
-        if (! ($node_attr->nodeName == 'class' && empty($value))) {
+        if (!($node_attr->nodeName == 'class' && empty($value))) {
             return $node_attr->nodeName . '="' . $value . '"';
         }
 
@@ -275,15 +275,15 @@ class HtmlBeautifier
                 XML_DOCUMENT_TYPE_NODE,
                 XML_COMMENT_NODE,
                 XML_TEXT_NODE,
-                XML_CDATA_SECTION_NODE
+                XML_CDATA_SECTION_NODE,
             ],
             'name' => [
                 'meta',
                 'link',
                 'img',
                 'br',
-                'input'
-            ]
+                'input',
+            ],
         ];
 
         $result = '';
@@ -291,12 +291,12 @@ class HtmlBeautifier
         $ident = $this->getIdent();
 
         if ($closeTag) {
-            if (! in_array($node->nodeType, $ignoreCloseTags['type']) && ! in_array($node->nodeName, $ignoreCloseTags['name'])) {
+            if (!in_array($node->nodeType, $ignoreCloseTags['type']) && !in_array($node->nodeName, $ignoreCloseTags['name'])) {
                 $result .= $node->hasChildNodes() && $node->childNodes->length > 1 ? $ident : '';
                 $result .= '</' . $node->nodeName . '>';
             }
         } else {
-            if (XML_COMMENT_NODE == $node->nodeType || ! in_array($node->nodeType, $ignoreCloseTags['type'])) {
+            if (XML_COMMENT_NODE == $node->nodeType || !in_array($node->nodeType, $ignoreCloseTags['type'])) {
                 $result .= $ident;
             }
 
@@ -317,7 +317,7 @@ class HtmlBeautifier
 
                 $attrs = $this->getNodeAttributesHtml($node);
 
-                if (! empty($attrs)) {
+                if (!empty($attrs)) {
                     $result .= ' ' . $attrs;
                 }
 
@@ -337,7 +337,7 @@ class HtmlBeautifier
     protected function traverseNode(\DOMNode $node = null): string
     {
         $ignoreEmptyNodes = [
-            'script'
+            'script',
         ];
 
         $result = '';
@@ -352,11 +352,11 @@ class HtmlBeautifier
 
             if ($child_node->hasChildNodes()) {
 
-                $this->level ++;
+                $this->level++;
 
                 $node_content .= $this->traverseNode($child_node);
 
-                $this->level --;
+                $this->level--;
             }
 
             if ($child_node->nodeName == 'body') {
@@ -365,7 +365,7 @@ class HtmlBeautifier
 
             $node_end = $this->getNodeHtml($child_node, true);
 
-            if (! (in_array($child_node->nodeName, $ignoreEmptyNodes) && empty($node_content) && $this->nodeExtraAttributes($child_node))) {
+            if (!(in_array($child_node->nodeName, $ignoreEmptyNodes) && empty($node_content) && $this->nodeExtraAttributes($child_node))) {
                 $result .= $node_start . $node_content . $node_end;
             } elseif ($child_node->childNodes->length && XML_CDATA_SECTION_NODE == $child_node->childNodes->item(0)->nodeType) {
                 $key = $this->getNodeUID($child_node->childNodes->item(0), 'js_');
@@ -422,4 +422,3 @@ class HtmlBeautifier
         return $html;
     }
 }
-

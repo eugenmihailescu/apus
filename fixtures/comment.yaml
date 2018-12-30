@@ -1,5 +1,5 @@
 Apus\Entity\Comment:
   comment_{1..500}:
-    post: '@post*'
-    user: '@user*'
+    post: "@post*"
+    user: "@user*"
     content: <text()>
