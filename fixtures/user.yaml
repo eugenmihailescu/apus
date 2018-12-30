@@ -1,0 +1,22 @@
+Apus\Entity\User:
+  user1:
+    username: visitor
+    email: visitor@domain.org
+    enabled: true
+    password: <password()>
+    roles:
+    - ROLE_USER
+  user2:
+    username: admin
+    email: admin@domain.org
+    enabled: true
+    password: <password()>
+    roles:
+    - ROLE_ADMIN
+  user3:
+    username: super_admin
+    email: super_admin@domain.org
+    enabled: true
+    password: <password()>
+    roles:
+    - ROLE_SUPER_ADMIN

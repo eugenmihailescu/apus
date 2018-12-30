@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{%- block title -%}Homepage{%- endblock -%}
+
+{%- block body_id 'homepage' -%}
+
+{% block body %}
+
+{# {% set posts=test_data(10) %}#}
+
+{% if posts is empty %}
+    {% include 'home/_no-posts.html.twig' %}
+{% else %}
+    {% for post in posts %}
+    {% include 'home/_card.html.twig' with {post:post} %}
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

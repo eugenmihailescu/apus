@@ -1,0 +1,28 @@
+{% import 'home/_post-macros.html.twig' as macros %}
+<!-- {{ post.title }}, {{ post.publishedAt|date('Y-m-d') }} by {{ post.author }} -->
+<div class="row mb-4">
+	<div class="col col-sm-12 col-md-12 col-lg-8 mx-auto">
+		<div class="card">
+			<div class="card-body d-flex">
+				{{ macros.render_thumbnail(post, 'd-none d-sm-none d-md-inline-block') }}
+    			<div class="container">
+				    {{ macros.render_thumbnail(post, 'd-sm-block d-md-none') }}
+    				
+        			<a class="text-dark" href="#">
+    					<h3 class="card-title font-weight-bold">{{ post.title }}</h3>
+    				</a>
+    				<div class="text-muted">{{post.publishedAt|date('Y-m-d')}} by <a href="#">{{post.author}}</a></div>
+    				<div class="card-text">{{ post.content|raw }}</div>
+    				<div>
+        				<div class="float-left">
+        				    {% include 'home/_post-tags.html.twig' with {post:post} %}
+        				</div>
+    					<div class="float-right">
+    						<a href="#" class="badge badge-secondary">{{post.comments|length}} comments</a>
+    					</div>
+    				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+Apus\Entity\Post:
+  post_{1..100}:
+    title: <sentence()>
+    slug: <slug()>
+    content: <text()>
+    user: '@user*'
+    publishedAt: <date_create()>
+    thumbnail: <imageUrl(256,145,"technics")>

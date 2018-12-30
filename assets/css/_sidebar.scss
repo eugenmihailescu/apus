@@ -1,0 +1,74 @@
+$sidebar-lg-width: 15em;
+$sidebar-sm-width: 5em;
+$sidebar-background: $gray-800;
+$sidebar-color: $white;
+$sidebar-active: $gray-900;
+$sidebar-hover: $gray-600;
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    min-width: $sidebar-lg-width;
+    max-width: $sidebar-lg-width;
+    min-height: 100vh;
+    background: $sidebar-background;
+    color: $sidebar-color;
+}
+
+#sidebar.active {
+    min-width: $sidebar-sm-width;
+    max-width: $sidebar-sm-width;
+    text-align: center;
+}
+
+#sidebar.active .sidebar-header h3, 
+#sidebar.active span {
+    display: none;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar .sidebar-header {
+    padding: 1em;
+    background: $sidebar-active;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: $navbar-dark-active-color;
+}
+
+#sidebar ul li a:hover {
+    background: $sidebar-hover;
+    border-left:3px solid $dark;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.components a[data-toggle=collapse][aria-expanded=true] {
+	background-color: $sidebar-hover;
+	border-left:3px solid $dark;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
